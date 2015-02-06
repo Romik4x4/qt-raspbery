@@ -45,19 +45,17 @@
 #include "borderlayout.h"
 #include "window.h"
 
-void test(void);
+void test(QTextBrowser *centralWidget);
 
 QString name;
 
+
+
 Window::Window()
 {
-    test();
 
     QTextBrowser *centralWidget = new QTextBrowser;
-
-    centralWidget->setPlainText(tr(name.toAscii()));
-
-
+    test(centralWidget);
 
     BorderLayout *layout = new BorderLayout;
     layout->addWidget(centralWidget, BorderLayout::Center);
@@ -81,7 +79,7 @@ QLabel *Window::createLabel(const QString &text)
     return label;
 }
 
-void test(void) {
+void test(QTextBrowser *cw) {
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
 
@@ -96,9 +94,10 @@ void test(void) {
     } else {
 
      QSqlQuery query;
-     query.exec("SELECT name FROM test");
-     while (query.next()) {
+     query.exec("SELECT a,b FROM test");  // query.value(0) = a
+     while (query.next()) {               // query.value(1) = b
       name = query.value(1).toString();
+      cw->append(name);
      }
 
     }

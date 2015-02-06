@@ -66,6 +66,7 @@ class QVBoxLayout;
 class QDial;
 class QMessageBox;
 class QCheckBox;
+class QTextBrowser;
 
 QT_END_NAMESPACE
 
@@ -78,6 +79,7 @@ public:
 
 private:
     QLabel *createLabel(const QString &text);
+    QTextBrowser *centralWidget;
 };
 
 #endif
