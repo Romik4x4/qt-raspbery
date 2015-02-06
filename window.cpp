@@ -74,8 +74,6 @@ QLabel *Window::createLabel(const QString &text)
     QLabel *label = new QLabel(text);
     label->setFrameStyle(QFrame::Box | QFrame::Raised);
 
-
-
     return label;
 }
 
