@@ -48,9 +48,9 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     Window window;
 
-    window.showMaximized();
+    // window.showMaximized();
 
-  // window.show(); // Маленькое Окошко
+    window.show(); // Маленькое Окошко
 
     return app.exec();
 }

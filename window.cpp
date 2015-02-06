@@ -55,7 +55,7 @@ Window::Window()
 
     QTextBrowser *centralWidget = new QTextBrowser;
 
-    centralWidget->setPlainText(tr("Central widget"));
+    centralWidget->setPlainText(tr(name.toAscii()));
 
 
 
